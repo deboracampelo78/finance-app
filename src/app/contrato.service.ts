@@ -45,6 +45,7 @@ export class ContratoService {
 
   addContrato(contrato: Contrato) {
     this.contratos.push(contrato);
+    console.log("Contrato Adicionado com Sucesso!: ",this.contratos);
   }
 
 }
