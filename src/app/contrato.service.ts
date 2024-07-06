@@ -1,6 +1,6 @@
 import { ClienteService } from './cliente.service';
 import { Cliente } from './models/cliente.model';
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { Contrato } from './models/contrato.model';
 
 @Injectable({
@@ -16,6 +16,8 @@ export class ContratoService {
   ]
 
   private contratos: Contrato[] = [];
+
+  onNewContrato: EventEmitter<Contrato> = new EventEmitter<Contrato>();
 
   constructor(
     private clienteService: ClienteService) { 
@@ -44,8 +46,12 @@ export class ContratoService {
   }
 
   addContrato(contrato: Contrato) {
-    this.contratos.push(contrato);
+    let c: Contrato = contrato
+    this.contratos.push(c);
     console.log("Contrato Adicionado com Sucesso!: ",this.contratos);
+    this.onNewContrato.emit(contrato);
   }
+
+
 
 }

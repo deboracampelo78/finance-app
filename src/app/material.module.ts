@@ -7,6 +7,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCardModule } from '@angular/material/card';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   exports: [
@@ -17,7 +18,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatInputModule,
     MatSelectModule,
     MatCardModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatTableModule
     // outros módulos do Angular Material que você esteja utilizando
   ]
 })
